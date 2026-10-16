@@ -1,0 +1,38 @@
+.rich-text p {
+  font-size: inherit;
+}
+.xs {
+  font-size: var(--text-xxs);
+  letter-spacing: var(--tracking-normal);
+  line-height: var(--text-xs-line-height);
+}
+@media (width>=768px) {
+  .xs {
+    font-size: var(--text-xs);
+  }
+}
+.sm {
+  font-size: var(--text-sm);
+  letter-spacing: var(--tracking-normal);
+  line-height: var(--text-sm-line-height);
+}
+@media (width>=768px) {
+  .sm {
+    font-size: var(--text-md);
+  }
+}
+.md {
+  font-size: var(--text-md);
+  letter-spacing: var(--tracking-normal);
+  line-height: var(--text-md-line-height);
+}
+@media (width>=375px) {
+  .md {
+    font-size: var(--text-md-lg);
+  }
+}
+@media (width>=768px) {
+  .md {
+    font-size: var(--text-lg);
+  }
+}
