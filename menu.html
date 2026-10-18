@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Thực đơn – Tcofi</title>
+<link rel="icon" type="image/jpeg" href="img/tcofi.jpg"/>
+<link rel="canonical" href="https://presidentan.github.io/Du-an-web-cafe/menu.html"/>
+<link href="css/style1.css" rel="stylesheet"/>
+<link href="css/style2.css" rel="stylesheet"/>
+<link href="css/style3.css" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#d1d2e6; --blue:#29358b; --ink:#1b1f3b; --card:#ffffff; --muted:#5b5f86; --line:#b9bbd9;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);line-height:1.5}
+a{color:inherit}
+
+/* Banner */
+.banner{background:var(--blue);color:#fff;text-align:center;padding:56px 5vw 44px}
+.banner h1{margin:0 0 10px;font-size:clamp(28px,5vw,44px);font-weight:700;letter-spacing:-.01em}
+.banner p{margin:0 auto;max-width:52ch;color:#dfe1f7}
+
+/* Bộ lọc */
+.tabs{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;padding:22px 5vw 6px;position:sticky;top:0;z-index:4;background:var(--bg)}
+.tabs button{font:inherit;font-size:14px;font-weight:600;padding:9px 18px;border-radius:50px;border:2px solid var(--blue);background:transparent;color:var(--blue);cursor:pointer}
+.tabs button:hover{background:rgba(41,53,139,.1)}
+.tabs button[aria-pressed="true"]{background:var(--blue);color:#fff}
+.tabs button:focus-visible,.btn:focus-visible,a:focus-visible{outline:3px solid #000;outline-offset:2px}
+
+/* Danh mục */
+main{max-width:1040px;margin:0 auto;padding:12px 5vw 56px}
+.group{margin-top:36px;scroll-margin-top:70px}
+.group[hidden]{display:none}
+.group-head{display:grid;grid-template-columns:1fr;gap:0;background:var(--blue);color:#fff;border-radius:18px;overflow:hidden}
+.group-head h2{margin:0;font-size:26px}
+.group-head p{margin:4px 0 0;color:#dfe1f7;font-size:14px}
+@media(min-width:720px){
+  .group-head{grid-template-columns:260px 1fr;align-items:stretch}
+}
+.items{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:12px}
+@media(min-width:720px){.items{grid-template-columns:1fr 1fr}}
+.item{background:var(--card);border-radius:14px;padding:16px 18px}
+.row{display:flex;align-items:baseline;gap:10px}
+.row h3{margin:0;font-size:17px}
+.row .dots{flex:1;border-bottom:2px dotted var(--line);transform:translateY(-4px)}
+.price{font-weight:700;color:var(--blue);white-space:nowrap}
+.item p{margin:6px 0 0;font-size:14px;color:var(--muted)}
+.tag{display:inline-block;margin-left:8px;font-size:11px;font-weight:700;color:#fff;background:var(--blue);border-radius:50px;padding:1px 9px;vertical-align:middle}
+.sizes{margin-top:8px;font-size:13px;color:var(--muted)}
+
+
+.item{display:grid;grid-template-columns:72px 1fr;gap:14px;align-items:center}
+.thumb{width:72px;height:72px;border-radius:14px;background:#eceefb;padding:6px;display:block}
+.group-head .art{display:flex;align-items:center;justify-content:center;height:170px;background:#3a47a6}
+.group-head .art svg{width:130px;height:130px}
+.group-head .txt{padding:18px 24px 20px}
+@media(min-width:720px){.group-head .art{height:auto;min-height:170px}.group-head .txt{display:flex;flex-direction:column;justify-content:center;padding:24px 32px}}
+.pic{position:relative;display:block;width:72px;height:72px;border-radius:14px;overflow:hidden}
+.pic .thumb{position:absolute;inset:0;width:100%;height:100%}
+.pic>img,.group-head .art>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.group-head .art{position:relative;overflow:hidden}
+.note{margin-top:36px;text-align:center;font-size:14px;color:var(--muted)}
+.cta{margin-top:18px;text-align:center}
+.cta .btn{background:var(--blue);border-color:var(--blue);color:#fff;padding:12px 28px;font-size:14px}
+
+
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+
+.cta .btn{display:inline-block;text-decoration:none;font-weight:600;border-radius:50px;border:2px solid var(--blue);background:var(--blue);color:#fff;padding:12px 28px;font-size:14px}
+.banner h1{font-size:clamp(28px,5vw,44px)}
+</style>
+</head>
+<body id="top">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+<symbol id="mug" viewBox="0 0 64 64"><path d="M14 26h32v14a14 14 0 0 1-14 14h-4a14 14 0 0 1-14-14z" fill="var(--c1)"/><ellipse cx="30" cy="26" rx="16" ry="4" fill="var(--c2)"/><path d="M46 30h4a6 6 0 0 1 0 12h-5" fill="none" stroke="var(--c1)" stroke-width="4" stroke-linecap="round"/><path d="M24 16c-3-3 3-5 0-9M33 16c-3-3 3-5 0-9" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="2.5" stroke-linecap="round"/><rect x="12" y="56" width="36" height="3" rx="1.5" fill="#000" opacity=".12"/></symbol>
+<symbol id="glass" viewBox="0 0 64 64"><clipPath id="gc"><path d="M16 14h32l-4 42a3 3 0 0 1-3 3H23a3 3 0 0 1-3-3z"/></clipPath><path d="M16 14h32l-4 42a3 3 0 0 1-3 3H23a3 3 0 0 1-3-3z" fill="#fff" fill-opacity=".55"/><g clip-path="url(#gc)"><rect x="10" y="22" width="44" height="40" fill="var(--c1)"/><rect x="10" y="22" width="44" height="14" fill="var(--c2)"/><rect x="24" y="38" width="10" height="10" rx="2" fill="#fff" opacity=".35"/><rect x="34" y="46" width="9" height="9" rx="2" fill="#fff" opacity=".3"/></g><path d="M16 14h32l-4 42a3 3 0 0 1-3 3H23a3 3 0 0 1-3-3z" fill="none" stroke="#29358b" stroke-width="2" stroke-linejoin="round"/><path d="M38 20L46 3" stroke="var(--c3,#29358b)" stroke-width="3" stroke-linecap="round"/><circle cx="48" cy="14" r="0" fill="var(--c3)"/></symbol>
+<symbol id="skewer" viewBox="0 0 64 64"><path d="M6 58L58 6" stroke="#b07a3c" stroke-width="3" stroke-linecap="round"/><g transform="rotate(-45 32 32)"><rect x="12" y="25" width="12" height="14" rx="6" fill="var(--c1)"/><rect x="26" y="24" width="13" height="16" rx="6" fill="var(--c2)"/><rect x="41" y="25" width="12" height="14" rx="6" fill="var(--c1)"/></g></symbol>
+<symbol id="roll" viewBox="0 0 64 64"><ellipse cx="32" cy="50" rx="26" ry="7" fill="#fff"/><g transform="rotate(-8 32 34)"><rect x="8" y="26" width="48" height="16" rx="8" fill="var(--c1)"/><path d="M20 26v16M32 26v16M44 26v16" stroke="var(--c2)" stroke-width="2.5"/></g><path d="M18 18c-3-3 3-5 0-9M30 18c-3-3 3-5 0-9" fill="none" stroke="#29358b" stroke-opacity=".35" stroke-width="2.5" stroke-linecap="round"/></symbol>
+<symbol id="seeds" viewBox="0 0 64 64"><g transform="translate(32 28)" fill="var(--c1)"><ellipse rx="5" ry="14" cy="-14"/><ellipse rx="5" ry="14" cy="-14" transform="rotate(45)"/><ellipse rx="5" ry="14" cy="-14" transform="rotate(90)"/><ellipse rx="5" ry="14" cy="-14" transform="rotate(135)"/><ellipse rx="5" ry="14" cy="-14" transform="rotate(180)"/><ellipse rx="5" ry="14" cy="-14" transform="rotate(225)"/><ellipse rx="5" ry="14" cy="-14" transform="rotate(270)"/><ellipse rx="5" ry="14" cy="-14" transform="rotate(315)"/></g><circle cx="32" cy="28" r="10" fill="var(--c2)"/><path d="M32 40v20" stroke="#4d7a3a" stroke-width="3" stroke-linecap="round"/></symbol>
+</defs></svg>
+
+<header class="relative z-2">
+    <nav aria-label="Global" class="bg-white shadow-global-nav" style="background-color: #d1d2e6;">
+     <div class="global-gutters flex items-center justify-between">
+      <a aria-label="Trang chủ Tcofi" class="my-4 mr-4 shrink-0 md:mr-6 lg:my-6 lg:mr-10" href="index.html">
+       <img alt="" class="size-8 xxs:size-10 md:size-13" src="img/tcofi.jpg"/>
+      </a>
+      <div class="flex w-full justify-between self-stretch">
+       <ul class="flex gap-6">
+        <li class="flex items-center">
+         <a aria-current="page" class="inline-block text-xs font-bold tracking-widest text-black-90 uppercase no-underline" style="border-bottom:2px solid #29358b;padding-bottom:2px" href="menu.html">Menu</a>
+        </li>
+        <li class="flex items-center">
+         <a class="inline-block text-xs font-bold tracking-widest text-black-90 uppercase no-underline" href="index.html#about">About Us</a>
+        </li>
+        <li class="flex items-center">
+         <a class="inline-block text-xs font-bold tracking-widest text-black-90 uppercase no-underline" href="index.html#contact">Contact</a>
+        </li>
+       </ul>
+       <div class="flex items-center gap-5 self-center md:ml-4 lg:ml-10">
+        <div class="mt-8 flex items-center gap-4 md:mt-auto" data-auth>
+         <a class="button black text-xs" href="dndky.html#register">Đăng ký</a>
+         <a class="button positive black text-xs" href="dndky.html">Đăng nhập</a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </nav>
+   </header>
+
+<section class="banner">
+  <h1>Thực đơn Tcofi</h1>
+  <p>Cà phê pha mỗi ngày, trà trái cây thanh mát và những món vặt cuối tuần. Chọn món bạn thích nhé!</p>
+</section>
+
+<div class="tabs" role="group" aria-label="Lọc theo nhóm món">
+  <button type="button" data-filter="all" aria-pressed="true">Tất cả</button>
+  <button type="button" data-filter="caphe" aria-pressed="false">Cà phê</button>
+  <button type="button" data-filter="tra" aria-pressed="false">Trà &amp; trà trái cây</button>
+  <button type="button" data-filter="mua" aria-pressed="false">Món mùa thu</button>
+  <button type="button" data-filter="anvat" aria-pressed="false">Ăn vặt</button>
+</div>
+
+<main>
+
+  <section class="group" id="caphe" data-group="caphe">
+    <div class="group-head">
+      <div class="art"><svg style="--c1:#7a4a2a;--c2:#f6ebd9;--c3:#fff" role="img" aria-hidden="true"><use href="#mug"/></svg><img src="img/caphesua.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+      <div class="txt">
+        <h2>Cà phê</h2>
+        <p>Pha từ hạt cà phê chọn lọc, đậm vị và thơm lâu.</p>
+      </div>
+    </div>
+    <ul class="items">
+      <li class="item">
+        <span class="pic"><svg class="thumb" style="--c1:#3b2314;--c2:#5a3a22;--c3:#29358b" role="img" aria-hidden="true"><use href="#glass"/></svg><img src="img/ca-phe-den.jpg" alt="Cà phê đen" loading="lazy" onerror="this.remove()"></span>
+        <div>
+        <div class="row"><h3>Cà phê đen<span class="tag">Bán chạy</span></h3><span class="dots"></span><span class="price">25.000đ</span></div>
+        <p>Đậm, đắng nhẹ, hậu vị ngọt. Dùng nóng hoặc đá.</p>
+      </div>
+      </li>
+      <li class="item">
+        <span class="pic"><svg class="thumb" style="--c1:#8a5a36;--c2:#e9d3b4;--c3:#29358b" role="img" aria-hidden="true"><use href="#glass"/></svg><img src="img/caphesua.jpg" alt="Cà phê sữa" loading="lazy" onerror="this.remove()"></span>
+        <div>
+        <div class="row"><h3>Cà phê sữa</h3><span class="dots"></span><span class="price">29.000đ</span></div>
+        <p>Cà phê pha phin với sữa đặc, béo vừa phải.</p>
+      </div>
+      </li>
+      <li class="item">
+        <span class="pic"><svg class="thumb" style="--c1:#d9b48a;--c2:#f6ebd9;--c3:#29358b" role="img" aria-hidden="true"><use href="#glass"/></svg><img src="img/bac-xiu.jpg" alt="Bạc xỉu" loading="lazy" onerror="this.remove()"></span>
+        <div>
+        <div class="row"><h3>Bạc xỉu</h3><span class="dots"></span><span class="price">32.000đ</span></div>
+        <p>Nhiều sữa, ít cà phê, hợp người mới uống.</p>
+      </div>
+      </li>
+      <li class="item">
+        <span class="pic"><svg class="thumb" style="--c1:#7a4a2a;--c2:#f6ebd9;--c3:#29358b" role="img" aria-hidden="true"><use href="#mug"/></svg><img src="img/cappuccino.jpg" alt="Cappuccino" loading="lazy" onerror="this.remove()"></span>
+        <div>
+        <div class="row"><h3>Cappuccino</h3><span class="dots"></span><span class="price">45.000đ</span></div>
+        <p>Espresso, sữa nóng và lớp bọt sữa mịn.</p>
+      </div>
+      </li>
+      <li class="item">
+        <span class="pic"><svg class="thumb" style="--c1:#a8714a;--c2:#fff4e0;--c3:#29358b" role="img" aria-hidden="true"><use href="#mug"/></svg><img src="img/latte.jpg" alt="Latte" loading="lazy" onerror="this.remove()"></span>
+        <div>
+        <div class="row"><h3>Latte</h3><span class="dots"></span><span class="price">45.000đ</span></div>
+        <p>Espresso cùng sữa tươi đánh nóng, vị dịu.</p>
+      </div>
+      </li>
+      <li class="item">
+        <span class="pic"><svg class="thumb" style="--c1:#6b4226;--c2:#fffaf0;--c3:#29358b" role="img" aria-hidden="true"><use href="#glass"/></svg><img src="img/ca-phe-muoi.jpg" alt="Cà phê muối" loading="lazy" onerror="this.remove()"></span>
+        <div>
+        <div class="row"><h3>Cà phê muối</h3><span class="dots"></span><span class="price">39.000đ</span></div>
+        <p>Cà phê sữa phủ lớp kem muối béo mặn.</p>
+      </div>
+      </li>
+    </ul>
+  </section>
+
+  <section class="group" id="tra" data-group="tra">
+    <div class="group-head">
+      <div class="art"><svg style="--c1:#f0a02a;--c2:#ffd36b;--c3:#fff" role="img" aria-hidden="true"><use href="#glass"/></svg><img src="img/ban-huong-duong-tra-chanh.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+      <div class="txt">
+        <h2>Trà &amp; trà trái cây</h2>
+        <p>Thanh mát, ít ngọt, uống giữa trưa là hết nóng.</p>
+      </div>
+    </div>
+    <ul class="items">
+      <li class="item">
+        <span class="pic"><svg class="thumb" style="--c1:#e8b13a;--c2:#f3e07a;--c3:#29358b" role="img" aria-hidden="true"><use href="#glass"/></svg><img src="img/ban-huong-duong-tra-chanh.jpg" alt="Trà chanh" loading="lazy" onerror="this.remove()"></span>
+        <div>
+        <div class="row"><h3>Trà chanh</h3><span class="dots"></span><span class="price">25.000đ</span></div>
+        <p>Trà đen pha đậm với chanh tươi.</p>
+      </div>
+      </li>
+      <li class="item">
+        <span class="pic"><svg class="thumb" style="--c1:#f0a02a;--c2:#ffd36b;--c3:#29358b" role="img" aria-hidden="true"><use href="#glass"/></svg><img src="img/tra-quat.jpg" alt="Trà quất (trà tắc)" loading="lazy" onerror="this.remove()"></span>
+        <div>
+        <div class="row"><h3>Trà quất (trà tắc)</h3><span class="dots"></span><span class="price">28.000đ</span></div>
+        <p>Chua ngọt thanh mát, thêm vài lát quất tươi.</p>
+      </div>
+      </li>
+      <li class="item">
+        <span class="pic"><svg class="thumb" style="--c1:#f58a5c;--c2:#fbc7a1;--c3:#29358b" role="img" aria-hidden="true"><use href="#glass"/></svg><img src="img/tra-dao-cam-sa.jpg" alt="Trà đào cam sả" loading="lazy" onerror="this.remove()"></span>
+        <div>
+        <div class="row"><h3>Trà đào cam sả</h3><span class="dots"></span><span class="price">42.000đ</span></div>
+        <p>Đào miếng, cam vàng và sả thơm.</p>
+      </div>
+      </li>
+      <li class="item">
+        <span class="pic"><svg class="thumb" style="--c1:#f7c9c9;--c2:#fde8e8;--c3:#29358b" role="img" aria-hidden="true"><use href="#glass"/></svg><img src="img/tra-vai.jpg" alt="Trà vải" loading="lazy" onerror="this.remove()"></span>
+        <div>
+        <div class="row"><h3>Trà vải</h3><span class="dots"></span><span class="price">39.000đ</span></div>
+        <p>Trà hoa nhài cùng vải ngâm ngọt dịu.</p>
+      </div>
+      </li>
+    </ul>
+  </section>
+
+  <section class="group" id="mua" data-group="mua">
+    <div class="group-head">
+      <div class="art"><svg style="--c1:#f5b800;--c2:#5b3a1a;--c3:#fff" role="img" aria-hidden="true"><use href="#seeds"/></svg><img src="img/tra-quat-hat-huong-duong.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+      <div class="txt">
+        <h2>Món mùa thu</h2>
+        <p>Thực đơn giới hạn, có đến hết mùa.</p>
+      </div>
+    </div>
+    <ul class="items">
+      <li class="item">
+        <span class="pic"><svg class="thumb" style="--c1:#f0a02a;--c2:#ffd36b;--c3:#29358b" role="img" aria-hidden="true"><use href="#glass"/></svg><img src="img/tra-quat-hat-huong-duong.jpg" alt="Trà quất hạt hướng dương" loading="lazy" onerror="this.remove()"></span>
+        <div>
+        <div class="row"><h3>Trà quất hạt hướng dương<span class="tag">Mới</span></h3><span class="dots"></span><span class="price">35.000đ</span></div>
+        <p>Trà quất chua ngọt ăn kèm hạt hướng dương giòn.</p>
+      </div>
+      </li>
+      <li class="item">
+        <span class="pic"><svg class="thumb" style="--c1:#8b5a2b;--c2:#d9b48a;--c3:#29358b" role="img" aria-hidden="true"><use href="#mug"/></svg><img src="img/ca-phe-hat-de.jpg" alt="Cà phê hạt dẻ" loading="lazy" onerror="this.remove()"></span>
+        <div>
+        <div class="row"><h3>Cà phê hạt dẻ<span class="tag">Mới</span></h3><span class="dots"></span><span class="price">49.000đ</span></div>
+        <p>Cà phê sữa thơm mùi hạt dẻ rang.</p>
+      </div>
+      </li>
+      <li class="item">
+        <span class="pic"><svg class="thumb" style="--c1:#e6c89a;--c2:#fff4e0;--c3:#29358b" role="img" aria-hidden="true"><use href="#mug"/></svg><img src="img/sua-nong-gung.jpg" alt="Sữa nóng gừng mật ong" loading="lazy" onerror="this.remove()"></span>
+        <div>
+        <div class="row"><h3>Sữa nóng gừng mật ong</h3><span class="dots"></span><span class="price">38.000đ</span></div>
+        <p>Ấm bụng cho những buổi chiều se lạnh.</p>
+      </div>
+      </li>
+    </ul>
+  </section>
+
+  <section class="group" id="anvat" data-group="anvat">
+    <div class="group-head">
+      <div class="art"><svg style="--c1:#e8734a;--c2:#f4c7a1;--c3:#fff" role="img" aria-hidden="true"><use href="#skewer"/></svg><img src="img/xien-ban.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+      <div class="txt">
+        <h2>Ăn vặt cuối tuần</h2>
+        <p>Phục vụ thứ Sáu đến Chủ nhật, nóng giòn mỗi lượt.</p>
+      </div>
+    </div>
+    <ul class="items">
+      <li class="item">
+        <span class="pic"><svg class="thumb" style="--c1:#b8452a;--c2:#e0a35c;--c3:#29358b" role="img" aria-hidden="true"><use href="#skewer"/></svg><img src="img/xien-ban.jpg" alt="Xiên bẩn" loading="lazy" onerror="this.remove()"></span>
+        <div>
+        <div class="row"><h3>Xiên bẩn<span class="tag">Bán chạy</span></h3><span class="dots"></span><span class="price">10.000đ/xiên</span></div>
+        <p>Xiên nướng ăn kèm sốt chấm đậm vị.</p>
+      </div>
+      </li>
+      <li class="item">
+        <span class="pic"><svg class="thumb" style="--c1:#e8734a;--c2:#f4c7a1;--c3:#29358b" role="img" aria-hidden="true"><use href="#skewer"/></svg><img src="img/xien-hai-san.jpg" alt="Xiên hải sản" loading="lazy" onerror="this.remove()"></span>
+        <div>
+        <div class="row"><h3>Xiên hải sản</h3><span class="dots"></span><span class="price">15.000đ/xiên</span></div>
+        <p>Các loại đồ biển nướng nóng.</p>
+      </div>
+      </li>
+      <li class="item">
+        <span class="pic"><svg class="thumb" style="--c1:#f4ead2;--c2:#d8c79a;--c3:#29358b" role="img" aria-hidden="true"><use href="#roll"/></svg><img src="img/banh-cuon-hut.jpg" alt="Bánh cuốn hút" loading="lazy" onerror="this.remove()"></span>
+        <div>
+        <div class="row"><h3>Bánh cuốn hút</h3><span class="dots"></span><span class="price">20.000đ</span></div>
+        <p>Cuốn mỏng, cuốn hút ngay từ miếng đầu tiên.</p>
+      </div>
+      </li>
+      <li class="item">
+        <span class="pic"><svg class="thumb" style="--c1:#f5b800;--c2:#5b3a1a;--c3:#29358b" role="img" aria-hidden="true"><use href="#seeds"/></svg><img src="img/hat-huong-duong.jpg" alt="Hạt hướng dương" loading="lazy" onerror="this.remove()"></span>
+        <div>
+        <div class="row"><h3>Hạt hướng dương</h3><span class="dots"></span><span class="price">15.000đ</span></div>
+        <p>Rang giòn, nhâm nhi cùng trà.</p>
+      </div>
+      </li>
+    </ul>
+  </section>
+
+  <p class="note">Giá đã bao gồm VAT. Thêm topping (trân châu, thạch, kem muối) +5.000đ. Món mùa có thể thay đổi theo tuần.</p>
+  <div class="cta"><a class="btn" href="order.html">Đặt hàng</a></div>
+</main>
+
+<footer aria-label="Global" class="pt-6 pb-6 shadow-global-footer lg:pt-10 lg:pb-10">
+    <div class="global-gutters">
+     <div class="mb-3">
+      <ul class="-ml-1.75 flex flex-row xs:gap-1">
+       <li>
+        <a aria-label="github" class="icon-button" href="https://github.com/presidentan/Du-an-web-cafe">
+         <img alt="github" width="32" height="32" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E"/>
+        </a>
+       </li>
+      </ul>
+     </div>
+     <p class="mt-4 mb-4 text-xs text-black-58">
+      © 2026 Tcofi. All rights reserved.
+     </p>
+    </div>
+   </footer>
+
+<script>
+(function(){
+  var tabs=document.querySelectorAll('.tabs button');
+  var groups=document.querySelectorAll('.group');
+  tabs.forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var f=btn.getAttribute('data-filter');
+      tabs.forEach(function(b){b.setAttribute('aria-pressed',b===btn?'true':'false')});
+      groups.forEach(function(g){g.hidden=(f!=='all'&&g.getAttribute('data-group')!==f)});
+    });
+  });
+})();
+</script>
+<script src="js/auth.js"></script>
+</body>
+</html>

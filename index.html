@@ -1,28 +1,19 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="vi">
+<head>
  <meta charset="utf-8"/>
  <meta content="width=device-width, initial-scale=1" name="viewport"/>
- <meta content="summary" property="x:card"/>
- <meta content="@starbucks" property="x:site"/>
- <meta content="@starbucksprtnrs" property="x:creator"/>
- <link rel="icon" type="image/jpeg" href="index/img/tcofi.jpg"/>
+ <title>Tcofi</title>
+ <link rel="icon" type="image/jpeg" href="img/tcofi.jpg"/>
  <meta content="company" property="og:type"/>
  <meta content="Tcofi" property="og:title"/>
  <meta content="https://presidentan.github.io/Du-an-web-cafe/" property="og:url"/>
- <title>
-  Tcofi
- </title>
- <link href="index/style1.css" rel="stylesheet"/>
- <link href="index/style2.css" rel="stylesheet"/>
- <meta content="no-referrer" name="referrer"/>
- <link href="index/style3.css" rel="stylesheet"/>
- <link href="https://www.trucaphe.com/" rel="canonical"/>
- <meta content="default-src 'none'; font-src 'self' data:; img-src 'self' data:; style-src 'unsafe-inline'; media-src 'self' data:; script-src 'unsafe-inline' data:; object-src 'self' data:; frame-src 'self' data:; form-action 'none'; base-uri 'none';" http-equiv="content-security-policy"/>
- <body data-sveltekit-preload-data="hover" style="background-color: #d1d2e6;">
-  <noscript>
-  </noscript>
-  <script>
-  </script>
+ <link rel="canonical" href="https://presidentan.github.io/Du-an-web-cafe/"/>
+ <link href="css/style1.css" rel="stylesheet"/>
+ <link href="css/style2.css" rel="stylesheet"/>
+ <link href="css/style3.css" rel="stylesheet"/>
+</head>
+<body style="background-color: #d1d2e6;">
   <div style="display:contents">
    <div class="invisible fixed top-3 z-10 w-full text-center lg:pr-16 lg:text-right">
     <a aria-label="Skip to main content" class="button positive visible -translate-y-2/1 opacity-0 focus:translate-y-0 focus:opacity-100" href="#main-content">
@@ -32,35 +23,25 @@
    <header class="relative z-2">
     <nav aria-label="Global" class="bg-white shadow-global-nav" style="background-color: #d1d2e6;">
      <div class="global-gutters flex items-center justify-between">
-      <a aria-label="Home, Starbucks" class="my-4 mr-4 shrink-0 md:mr-6 lg:my-6 lg:mr-10" data-sveltekit-reload="" href="https://presidentan.github.io/Du-an-web-cafe/">
-      <img alt="" class="size-8 xxs:size-10 md:size-13" src="index/img/tcofi.jpg"/>     
-     </a>
+      <a aria-label="Trang chủ Tcofi" class="my-4 mr-4 shrink-0 md:mr-6 lg:my-6 lg:mr-10" href="index.html">
+       <img alt="" class="size-8 xxs:size-10 md:size-13" src="img/tcofi.jpg"/>
+      </a>
       <div class="flex w-full justify-between self-stretch">
        <ul class="flex gap-6">
-        <li class="flex items-center svelte-hb9me1">
-         <a class="inline-block text-xs font-bold tracking-widest text-black-90 uppercase no-underline " data-sveltekit-reload="" href="https://presidentan.github.io/Du-an-web-cafe/menu">
-          Menu
-         </a>
-         <li class="flex items-center svelte-hb9me1">
-          <a class="inline-block text-xs font-bold tracking-widest text-black-90 uppercase no-underline " data-sveltekit-reload="" href="https://presidentan.github.io/Du-an-web-cafe/rewards">
-           About Us
-          </a>
-          <li class="flex items-center svelte-hb9me1">
-           <a class="inline-block text-xs font-bold tracking-widest text-black-90 uppercase no-underline " data-sveltekit-reload="" href="https://presidentan.github.io/Du-an-web-cafe/gift">
-            Contact
-           </a>
-          </li>
-         </li>
+        <li class="flex items-center">
+         <a class="inline-block text-xs font-bold tracking-widest text-black-90 uppercase no-underline" href="menu.html">Menu</a>
+        </li>
+        <li class="flex items-center">
+         <a class="inline-block text-xs font-bold tracking-widest text-black-90 uppercase no-underline" href="#about">About Us</a>
+        </li>
+        <li class="flex items-center">
+         <a class="inline-block text-xs font-bold tracking-widest text-black-90 uppercase no-underline" href="contact - footer.html">Contact</a>
         </li>
        </ul>
        <div class="flex items-center gap-5 self-center md:ml-4 lg:ml-10">
-        <div class="mt-8 flex items-center gap-4 md:mt-auto">
-         <a class="button black text-xs" data-e2e="sign-in-button" data-sveltekit-reload="" href="https://presidentan.github.io/Du-an-web-cafe/account/signin?returnUrl=%2F">
-          Đăng ký
-         </a>
-         <a class="button positive black text-xs" data-e2e="join-now-button" data-sveltekit-reload="" href="https://presidentan.github.io/Du-an-web-cafe/account/create">
-          Đăng nhập
-         </a>
+        <div class="mt-8 flex items-center gap-4 md:mt-auto" data-auth>
+         <a class="button black text-xs" href="dndky.html#register">Đăng ký</a>
+         <a class="button positive black text-xs" href="dndky.html">Đăng nhập</a>
         </div>
        </div>
       </div>
@@ -75,12 +56,12 @@
         <div class="flex flex-col justify-center md:max-w-3/5 mx-auto text-center">
          <div class="rich-text text-pretty" style="color:#FFFFFF">
           <h2 class="font-semibold sm" style="margin-top:-5px;margin-bottom:-5px">
-           <p style="vertical-align:middle;display:inline-block">
+           <span style="vertical-align:middle;display:inline-block">
             Hôm nay là ngày tuyệt vời để thưởng thức cà phê!
-            <a href="https://presidentan.github.io/Du-an-web-cafe/menu" rel="external" style="background-color:#29358b;color:rgb(255,255,255);text-decoration:none;padding:2px 12px;border-radius:50px;margin-left:15px;margin-top:15px;display:inline-block;border:2px solid rgb(255,255,255);font-weight:300;transition:0.3s;cursor:pointer">
+            <a href="menu.html" style="background-color:#29358b;color:rgb(255,255,255);text-decoration:none;padding:2px 12px;border-radius:50px;margin-left:15px;margin-top:15px;display:inline-block;border:2px solid rgb(255,255,255);font-weight:300;transition:0.3s;cursor:pointer">
              Đặt hàng
             </a>
-           </p>
+           </span>
           </h2>
          </div>
         </div>
@@ -88,31 +69,29 @@
       </section>
      </div>
      <div class="my-8" id="e64695ad-d2af-4e4b-8206-74c28906f54d">
- <section class="max-width-column flex w-full flex-col md:flex-row md:items-center" style="background-color:#29358b">
-  <div class="flex flex-1 items-center justify-center">
-   <img alt="Bàn hướng dương với trà chanh." class="block" style="width:720px; max-width:100%; height:auto;" decoding="async" loading="lazy" src="index/img/ban-huong-duong-tra-chanh.jpg"/>
-  </div>
-  <div class="flex-1">
-   <div class="global-gutters">
-    <div class="flex flex-col py-8 md:max-w-[83%] mx-auto text-center px-4 md:px-6 lg:px-10 xl:px-12">
-     <h1 class="m-0 font-semibold md mb-6" style="color:#FFFFFF">
-      Mùa thu đã đến! Tận hưởng hương vị quen thuộc thôi nào!
-     </h1>
-     <div class="rich-text green-links text-pretty sm" style="color:#FFFFFF">
-      Thực đơn mùa thu đã chính thức ra mắt, mang theo tất cả những món khoái khẩu của bạn cùng vài bất ngờ đầy thú vị. Trà quất (trà tắc) chua ngọt thanh mát và hạt hướng dương giòn rụm, chúng ta cùng thưởng thức thôi!
+      <section class="max-width-column flex w-full flex-col md:flex-row md:items-center" style="background-color:#29358b">
+       <div class="flex flex-1 items-center justify-center">
+        <img alt="Bàn hướng dương với trà chanh." class="block" style="width:720px; max-width:100%; height:auto;" decoding="async" loading="lazy" src="img/ban-huong-duong-tra-chanh.jpg"/>
+       </div>
+       <div class="flex-1">
+        <div class="global-gutters">
+         <div class="flex flex-col py-8 md:max-w-[83%] mx-auto text-center px-4 md:px-6 lg:px-10 xl:px-12">
+          <h1 class="m-0 font-semibold md mb-6" style="color:#FFFFFF">
+           Mùa thu đã đến! Tận hưởng hương vị quen thuộc thôi nào!
+          </h1>
+          <div class="rich-text green-links text-pretty sm" style="color:#FFFFFF">
+           Thực đơn mùa thu đã chính thức ra mắt, mang theo tất cả những món khoái khẩu của bạn cùng vài bất ngờ đầy thú vị. Trà quất (trà tắc) chua ngọt thanh mát và hạt hướng dương giòn rụm, chúng ta cùng thưởng thức thôi!
+          </div>
+          <a class="mt-8 button white self-center" href="menu.html#mua">Đặt hàng</a>
+         </div>
+        </div>
+       </div>
+      </section>
      </div>
-     <a class="mt-8 button white self-center" data-sveltekit-reload="false" href="https://presidentan.github.io/Du-an-web-cafe/discover/featured-menu">
-      Đặt hàng
-     </a>
-    </div>
-   </div>
-  </div>
- </section>
-</div>
      <div class="my-8" id="d06df782-8ac2-4a00-90ea-fd7ad80ab545">
       <section class="max-width-column flex w-full flex-col md:flex-row md:items-center md:flex-row-reverse" style="background-color:#29358b">
        <div class="flex flex-1 items-center justify-center">
-        <img alt="Mot ban xien ban cuon hut." class="block w-full" decoding="async" loading="lazy" src="index/img/xien-ban.jpg"/>
+        <img alt="Một bàn xiên bẩn, bánh cuốn hút." class="block w-full" decoding="async" loading="lazy" src="img/xien-ban.jpg"/>
        </div>
        <div class="flex-1">
         <div class="global-gutters">
@@ -121,11 +100,9 @@
            Đa dạng đồ biển! Cụ thể là xân biển...
           </h2>
           <div class="rich-text green-links text-pretty sm" style="color:#FFFFFF">
-        Thực đơn cuối tuần đã chính thức ra mắt, mang theo tất cả những món ăn vặt được yêu thích nhất.
+           Thực đơn cuối tuần đã chính thức ra mắt, mang theo tất cả những món ăn vặt được yêu thích nhất.
           </div>
-          <a class="mt-8 button white self-center" data-sveltekit-reload="false" href="https://presidentan.github.io/Du-an-web-cafe/discover/featured-menu">
-           Đặt hàng
-          </a>
+          <a class="mt-8 button white self-center" href="menu.html#anvat">Đặt hàng</a>
          </div>
         </div>
        </div>
@@ -134,20 +111,46 @@
      <div class="my-8" id="9c1f7629-3b3c-4697-8e40-c372c783e610">
       <section class="max-width-column flex w-full flex-col md:flex-row md:items-center" style="background-color:#29358b">
        <div class="flex flex-1 items-center w-full justify-center">
-            <img alt="Ca phe sua." class="block w-full decoding="async" loading="lazy" src="index/img/caphesua.jpg"/>
+        <img alt="Cà phê sữa." class="block w-full" decoding="async" loading="lazy" src="img/caphesua.jpg"/>
        </div>
        <div class="flex-1">
         <div class="global-gutters">
          <div class="flex flex-col py-8 md:max-w-[83%] mx-auto text-center px-4 md:px-6 lg:px-10 xl:px-12">
           <h2 class="m-0 font-semibold md mb-6" style="color:#FFFFFF">
-            Buổi sáng tràn đầy năng lượng với Tcafe
+           Buổi sáng tràn đầy năng lượng với Tcofi
           </h2>
           <div class="rich-text green-links text-pretty sm" style="color:#FFFFFF">
-            Tcafe luôn cung cấp những giọt cà phê chất lượng nhất đến với quý khách.
+           Tcofi luôn cung cấp những giọt cà phê chất lượng nhất đến với quý khách.
           </div>
-          <a class="mt-8 button white self-center" data-sveltekit-reload="true" href="https://www.shop.starbucks.com/pages/customer-login?return=%2F">
-           Đặt hàng
-          </a>
+          <a class="mt-8 button white self-center" href="menu.html#caphe">Đặt hàng</a>
+         </div>
+        </div>
+       </div>
+      </section>
+     </div>
+
+     <div class="my-8" id="about">
+      <section class="w-full" style="background-color:#29358b;scroll-margin-top:20px">
+       <div class="global-gutters py-8">
+        <div class="flex flex-col mx-auto text-center md:max-w-3/5" style="color:#FFFFFF">
+         <h2 class="m-0 font-semibold md mb-4">Về Tcofi</h2>
+         <div class="rich-text text-pretty sm">
+          Tcofi là quán cà phê nhỏ với cà phê pha mỗi ngày, trà trái cây thanh mát và các món ăn vặt cuối tuần. Hãy ghé quán, hoặc xem thực đơn và đặt món ngay trên trang này.
+         </div>
+        </div>
+       </div>
+      </section>
+     </div>
+
+     <div class="my-8" id="contact">
+      <section class="w-full" style="background-color:#29358b;scroll-margin-top:20px">
+       <div class="global-gutters py-8">
+        <div class="flex flex-col mx-auto text-center md:max-w-3/5" style="color:#FFFFFF">
+         <h2 class="m-0 font-semibold md mb-4">Liên hệ</h2>
+         <div class="rich-text text-pretty sm">
+          <p>Địa chỉ: số 3 Cầu Giấy, Láng, Hà Nội</p>
+          <p>Điện thoại: [0838 612 345]</p>
+          <p>Giờ mở cửa: 07:00 - 22:30 mỗi ngày (ăn vặt phục vụ thứ Sáu đến Chủ nhật)</p>
          </div>
         </div>
        </div>
@@ -157,26 +160,21 @@
    </main>
    <footer aria-label="Global" class="pt-6 pb-6 shadow-global-footer lg:pt-10 lg:pb-10">
     <div class="global-gutters">
-     <div class="lg:hidden sf-hidden">
-     </div>
      <div class="mb-3">
       <ul class="-ml-1.75 flex flex-row xs:gap-1">
        <li>
         <a aria-label="github" class="icon-button" href="https://github.com/presidentan/Du-an-web-cafe">
-        <img alt="github" width="32" height="32" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E"/>     
-       </a>
+         <img alt="github" width="32" height="32" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E"/>
+        </a>
+       </li>
+      </ul>
      </div>
      <p class="mt-4 mb-4 text-xs text-black-58">
       © 2026 Tcofi. All rights reserved.
      </p>
     </div>
    </footer>
-   <div aria-atomic="true" aria-live="assertive" id="svelte-announcer" style="position:absolute;left:0;top:0;clip:rect(0 0 0 0);clip-path:inset(50%);overflow:hidden;white-space:nowrap;width:1px;height:1px">
-   </div>
-   <script>
-   </script>
   </div>
-  <style>
-  </style>
- </body>
+  <script src="auth.js"></script>
+</body>
 </html>

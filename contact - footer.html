@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/contact - footer.css">
+</head>
+<body>
+  
+<section class="contact" id="contact">
+  <div class="contact-container">
+
+
+<div class="contact-info">
+  <span class="contact-label">CONTACT US</span>
+  <h2>Liên hệ với chúng tôi</h2>
+  <p>
+    Bạn có câu hỏi, góp ý hoặc muốn đặt bàn?
+    Hãy để lại thông tin, Teacoffee - Tcofi sẽ liên hệ với bạn sớm nhất.
+  </p>
+
+  <div class="info-item">
+    <div class="info-icon">📍</div>
+    <div>
+      <strong>Địa chỉ</strong>
+      <p>Số 3 Cầu Giấy, Láng, Hà Nội</p>
+    </div>
+  </div>
+
+  <div class="info-item">
+    <div class="info-icon">📞</div>
+    <div>
+      <strong>Số điện thoại</strong>
+      <p>0353 354 600</p>
+    </div>
+  </div>
+
+  <div class="info-item">
+    <div class="info-icon">✉️</div>
+    <div>
+      <strong>Email</strong>
+      <p>teacoffee@gmail.com</p>
+    </div>
+  </div>
+
+  <div class="info-item">
+    <div class="info-icon">🕐</div>
+    <div>
+      <strong>Giờ mở cửa</strong>
+      <p>8:00 - 22:00 mỗi ngày</p>
+    </div>
+  </div>
+</div>
+
+<div class="contact-form">
+  <h3>Gửi tin nhắn</h3>
+
+  <form onsubmit="sendMessage(event)">
+    <div class="form-group">
+      <label>Họ và tên</label>
+      <input type="text" placeholder="Nhập họ và tên" required>
+    </div>
+
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" placeholder="Nhập email" required>
+    </div>
+
+    <div class="form-group">
+      <label>Số điện thoại</label>
+      <input type="tel" placeholder="Nhập số điện thoại">
+    </div>
+
+    <div class="form-group">
+      <label>Nội dung</label>
+      <textarea rows="5" placeholder="Nhập nội dung cần liên hệ..." required></textarea>
+    </div>
+
+    <button type="submit" class="contact-btn">
+      Gửi tin nhắn →
+    </button>
+  </form>
+</div>
+
+  </div>
+</section>
+
+    <footer>
+      © 2026 Teacoffee — Đồng hành cùng bạn qua những kỷ niệm
+      
+    </footer>
+
+    <div class="toast" id="toast"></div>
+  </div>
+</body>
+</html>
