@@ -141,7 +141,7 @@ font-weight: 700;
 cursor: pointer;
 }
 .contact, footer{
-  background: url(coffee.webp);
+  background: url(../img/coffee.webp);
 }
 .contact-btn:hover {
 background: #b87842;
