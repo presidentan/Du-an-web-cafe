@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpeg" href="img/tcofi.jpg"/>
+    <title>Đơn chờ xử lý - Admin Manage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body data-report-page="pending">
+    <div class="dashboard-container">
+        <aside class="sidebar" id="admin-sidebar">
+            <div class="sidebar-logo"><h2>Admin<span> Panel</span></h2></div>
+            <nav class="sidebar-menu" aria-label="Điều hướng dashboard">
+                <ul>
+                    <li><a href="dashboard.html#orders">Quản lý đơn hàng</a></li>
+                    <li><a href="revenue.html">Doanh thu</a></li>
+                    <li><a href="pending-orders.html" class="active">Đơn chờ xử lý</a></li>
+                    <li><a href="dashboard.html#feedback">Feedback</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <header class="top-header">
+                <button class="sidebar-toggle" type="button" aria-label="Mở thanh điều hướng" aria-controls="admin-sidebar" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+                <div class="user-profile">
+                    <img src="tcofi.jpg" alt="Logo Tcofi" class="avatar">
+                    <span class="user-name">Quản trị viên</span>
+                </div>
+            </header>
+            <section class="report-intro">
+                <h1>Đơn chờ xử lý</h1>
+                <p>Các đơn chưa hoàn tất hoặc chưa bị hủy cần được xác nhận và xử lý.</p>
+            </section>
+            <p class="dashboard-message" id="report-message" role="status" hidden></p>
+            <section class="data-table-section report-table-section">
+                <div class="table-container">
+                    <table class="orders-table">
+                        <thead>
+                            <tr>
+                                <th>Mã đơn hàng</th>
+                                <th>Khách hàng</th>
+                                <th>Ngày đặt</th>
+                                <th>Món đã đặt</th>
+                                <th>Tổng tiền</th>
+                                <th>Trạng thái</th>
+                            </tr>
+                        </thead>
+                        <tbody id="report-orders-body"></tbody>
+                    </table>
+                </div>
+            </section>
+            <a class="back-link" href="dashboard.html">← Trở về trang quản lý</a>
+        </main>
+    </div>
+    <script src="js/admin-pages.js"></script>
+    <script src="js/sidebar.js"></script>
+</body>
+</html>

@@ -1,3 +1,19 @@
+// ─── Seed tài khoản admin mặc định (chỉ chạy 1 lần nếu chưa có) ───────────────
+(function seedAdmin() {
+    const ADMIN_EMAIL = 'admin@tcofi.vn';
+    const users = JSON.parse(localStorage.getItem('users') || '[]');
+    const alreadyExists = users.some(u => u.email === ADMIN_EMAIL);
+    if (!alreadyExists) {
+        users.unshift({
+            username: 'Admin',
+            email: ADMIN_EMAIL,
+            password: 'Admin123',
+            role: 'admin'
+        });
+        localStorage.setItem('users', JSON.stringify(users));
+    }
+})();
+
 const tabLogin = document.getElementById('tab-login');
 const tabRegister = document.getElementById('tab-register');
 const loginForm = document.getElementById('login-form');
@@ -111,7 +127,8 @@ registerForm.addEventListener('submit', (e) => {
         return;
     }
 
-    users.push({ username, email, password });
+    // Tài khoản đăng ký thường không có role admin
+    users.push({ username, email, password, role: 'user' });
     localStorage.setItem('users', JSON.stringify(users));
 
     registerForm.reset();
@@ -155,14 +172,21 @@ loginForm.addEventListener('submit', (e) => {
 
     if (matchedUser) {
         loginForm.reset();
-        
+
         localStorage.setItem('currentUser', JSON.stringify(matchedUser));
 
-        showStatus(`Đăng nhập thành công! Xin chào, ${matchedUser.username}. Đang về trang chủ...`, 'success');
-        
-        setTimeout(() => {
-            window.location.href = 'index.html'; 
-        }, 1200);
+        // ── Phân quyền sau đăng nhập ──────────────────────────────────────────
+        if (matchedUser.role === 'admin') {
+            showStatus(`Đăng nhập thành công! Chào Admin ${matchedUser.username}. Đang mở trang quản trị...`, 'success');
+            setTimeout(() => {
+                window.location.href = 'dashboard.html';
+            }, 1200);
+        } else {
+            showStatus(`Đăng nhập thành công! Xin chào, ${matchedUser.username}. Đang về trang chủ...`, 'success');
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 1200);
+        }
     } else {
         showStatus('Email hoặc mật khẩu không chính xác!', 'error');
     }

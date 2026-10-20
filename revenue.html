@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpeg" href="img/tcofi.jpg"/>
+    <title>Tổng doanh thu - Admin Manage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar" id="admin-sidebar">
+            <div class="sidebar-logo"><h2>Admin<span> Panel</span></h2></div>
+            <nav class="sidebar-menu" aria-label="Điều hướng dashboard">
+                <ul>
+                    <li><a href="dashboard.html#orders">Quản lý đơn hàng</a></li>
+                    <li><a href="revenue.html" class="active">Doanh thu</a></li>
+                    <li><a href="pending-orders.html">Đơn chờ xử lý</a></li>
+                    <li><a href="dashboard.html#feedback">Feedback</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <header class="top-header">
+                <button class="sidebar-toggle" type="button" aria-label="Mở thanh điều hướng" aria-controls="admin-sidebar" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+                <div class="user-profile">
+                    <img src="tcofi.jpg" alt="Logo Tcofi" class="avatar">
+                    <span class="user-name">Quản trị viên</span>
+                </div>
+            </header>
+            <section class="report-intro">
+                <h1>Tổng doanh thu</h1>
+                <p>Doanh thu được tính từ các đơn hàng chưa bị hủy.</p>
+            </section>
+            <p class="dashboard-message" id="report-message" role="status" hidden></p>
+            <section class="charts-grid" aria-label="Biểu đồ doanh thu">
+                <article class="chart-card">
+                    <h2>Doanh thu hàng ngày</h2>
+                    <p class="chart-subtitle">7 ngày gần nhất</p>
+                    <svg class="revenue-chart" id="chart-daily" viewBox="0 0 720 270" role="img" aria-label="Biểu đồ doanh thu hàng ngày"></svg>
+                </article>
+                <article class="chart-card">
+                    <h2>Doanh thu hàng tuần</h2>
+                    <p class="chart-subtitle">8 tuần gần nhất</p>
+                    <svg class="revenue-chart" id="chart-weekly" viewBox="0 0 720 270" role="img" aria-label="Biểu đồ doanh thu hàng tuần"></svg>
+                </article>
+                <article class="chart-card">
+                    <h2>Doanh thu hàng tháng</h2>
+                    <p class="chart-subtitle">12 tháng gần nhất</p>
+                    <svg class="revenue-chart" id="chart-monthly" viewBox="0 0 720 270" role="img" aria-label="Biểu đồ doanh thu hàng tháng"></svg>
+                </article>
+            </section>
+            <a class="back-link" href="dashboard.html">← Trở về trang quản lý</a>
+        </main>
+    </div>
+    <script src="js/admin-pages.js"></script>
+    <script src="js/sidebar.js"></script>
+</body>
+</html>

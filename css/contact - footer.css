@@ -19,7 +19,7 @@ margin: auto;
 display: grid;
 grid-template-columns: 1fr 1fr;
 gap: 60px;
-align-items: start;
+align-items: stretch;
 }
 
 .contact-label {
@@ -97,21 +97,21 @@ font-size: 25px;
 }
 
 .form-group {
-margin-bottom: 17px;
+margin-bottom: 15px;
 }
 
 .form-group label {
 display: block;
 margin-bottom: 7px;
 color: #5b3926;
-font-size: 14px;
+font-size: 20px;
 font-weight: 700;
 }
 
 .form-group input,
 .form-group textarea {
 width: 100%;
-padding: 13px 15px;
+padding: 13px 8px;
 border: 1px solid #eadfd4;
 border-radius: 10px;
 background: #faf7f3;
@@ -131,20 +131,28 @@ resize: vertical;
 }
 
 .contact-btn {
-width: 100%;
-padding: 14px;
-border-radius: 10px;
+width: 80%;
+padding: 24px;
+border-radius: 20px;
 background: #5b3926;
 color: white;
 font-size: 15px;
 font-weight: 700;
 cursor: pointer;
+text-align: center;
 }
-.contact, footer{
-  background: url(../img/coffee.webp);
+.contact {
+  background: #d2b48c;
 }
 .contact-btn:hover {
 background: #b87842;
+}
+
+.contact-status {
+  min-height: 1.5em;
+  margin-top: 14px;
+  color: #527a55;
+  font-size: 14px;
 }
 
 @media (max-width: 800px) {
@@ -162,11 +170,6 @@ font-size: 32px;
 footer { 
   text-align: center; 
   padding: 60px; 
-background: #ffffff;
+  background: #d2b48c;
   padding: 30px;
-  border-radius: 20px;
-  border: 1px solid #eadfd4;
-  box-shadow: 0 10px 30px #5b392615;
-
 }
-

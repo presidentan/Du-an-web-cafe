@@ -176,5 +176,23 @@
    </footer>
   </div>
   <script src="js/auth.js"></script>
+  
+   <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const loginBtn = document.getElementById('login-btn');
+        const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (currentUser && loginBtn) {           
+            loginBtn.textContent = `Xin chào, ${currentUser.username} !`;
+            loginBtn.href = "#";
+            loginBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (confirm('Bạn có muốn đăng xuất tài khoản này không?')) {
+                    localStorage.removeItem('currentUser'); 
+                    window.location.reload();              
+                }
+            });
+        }
+    });
+</script>
 </body>
 </html>

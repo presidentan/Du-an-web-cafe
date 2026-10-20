@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Quản lý đơn hàng</title>
+    <!-- Thêm font chữ Inter cho phong cách tối giản -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="icon" type="image/jpeg" href="img/tcofi.jpg"/>
+</head>
+<body>
+    <!-- ── Admin Guard: chặn user không phải admin ── -->
+    <script>
+        (function () {
+            var user = null;
+            try { user = JSON.parse(localStorage.getItem('currentUser') || 'null'); } catch (e) {}
+            if (!user || user.role !== 'admin') {
+                window.location.replace('index.html');
+            }
+        })();
+    </script>
+
+    <div class="dashboard-container">
+        <!-- 1. Sidebar (Thanh điều hướng) -->
+        <aside class="sidebar" id="admin-sidebar">
+            <div class="sidebar-logo">
+                <h2>Admin<span> Panel</span></h2>
+            </div>
+            <nav class="sidebar-menu" aria-label="Điều hướng dashboard">
+                <ul>
+                    <li><a href="#orders" class="active">Quản lý đơn hàng</a></li>
+                    <li><a href="revenue.html">Doanh thu</a></li>
+                    <li><a href="pending-orders.html">Đơn chờ xử lý</a></li>
+                    <li><a href="#feedback">Feedback</a></li>
+                    
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Khu vực nội dung chính -->
+        <main class="main-content">
+            <!-- 2. Header (Thanh trên cùng) -->
+            <header class="top-header">
+                <button class="sidebar-toggle" type="button" aria-label="Mở thanh điều hướng" aria-controls="admin-sidebar" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+                <div class="user-profile">
+                    <img src="img/tcofi.jpg" alt="Logo Tcofi" class="avatar">
+                    <span class="user-name" id="admin-name">Quản trị viên</span>
+                </div>
+                <a href="index.html" id="admin-logout" style="margin-left:auto;font-size:13px;padding:6px 14px;border-radius:6px;background:#e53e3e;color:#fff;text-decoration:none;font-weight:600;">Đăng xuất</a>
+            </header>
+
+            <!-- 3. Khu vực KPI (Tổng quan hôm nay) -->
+            <p class="dashboard-message" id="dashboard-message" role="status" hidden></p>
+
+            <section class="kpi-overview" id="overview" aria-label="Tổng quan">
+                <a class="kpi-card kpi-card-link" href="dashboard.html#orders">
+                    <h3>Đơn nhận hôm nay</h3>
+                    <p class="kpi-value" id="orders-today">0</p>
+                    <span class="kpi-trend neutral">Tính theo ngày đặt</span>
+                </a>
+                <a class="kpi-card kpi-card-link" href="revenue.html">
+                    <h3>Doanh thu hôm nay</h3>
+                    <p class="kpi-value" id="revenue-today">0₫</p>
+                    <span class="kpi-trend neutral">Không tính đơn đã hủy</span>
+                </a>
+                <a class="kpi-card kpi-card-link" href="pending-orders.html">
+                    <h3>Đơn chờ xử lý</h3>
+                    <p class="kpi-value" id="orders-pending">0</p>
+                    <span class="kpi-trend neutral">Cần xác nhận</span>
+                </a>
+                
+            </section>
+
+            <section class="data-table-section" id="orders">
+                <div class="section-header">
+                    <h2>Quản lý đơn hàng</h2>
+                    <p>Các đơn được gửi từ trang đặt hàng sẽ xuất hiện tại đây.</p>
+                </div>
+                <div class="table-container">
+                    <table class="orders-table">
+                        <thead>
+                            <tr>
+                                <th>Mã đơn hàng</th>
+                                <th>Khách hàng</th>
+                                <th>Ngày đặt</th>
+                                <th>Món đã đặt</th>
+                                <th>Tổng tiền</th>
+                                <th>Trạng thái</th>
+                            </tr>
+                        </thead>
+                        <tbody id="orders-body"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="data-table-section" id="customers">
+                <div class="section-header">
+                    <h2>Khách hàng</h2>
+                    <p>Tài khoản đăng ký và khách đã đặt hàng (được ghép theo email hoặc số điện thoại).</p>
+                </div>
+                <div class="table-container">
+                    <table class="customers-table">
+                        <thead>
+                            <tr>
+                                <th>Khách hàng</th>
+                                <th>Email</th>
+                                <th>Số điện thoại</th>
+                                <th>Số đơn</th>
+                                <th>Tổng chi tiêu</th>
+                                <th>Đơn gần nhất</th>
+                            </tr>
+                        </thead>
+                        <tbody id="customers-body"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="data-table-section" id="feedback">
+                <div class="section-header">
+                    <h2>Feedback khách hàng</h2>
+                    <p>Ý kiến gửi từ biểu mẫu liên hệ trên website.</p>
+                </div>
+                <div class="table-container">
+                    <table class="customers-table">
+                        <thead>
+                            <tr>
+                                <th>Khách hàng</th>
+                                <th>Email</th>
+                                <th>Số điện thoại</th>
+                                <th>Nội dung phản hồi</th>
+                                <th>Thời gian gửi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="feedback-body"></tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="js/dashboard.js"></script>
+    <script src="js/sidebar.js"></script>
+    <script>
+        // Hiển thị tên admin và xử lý đăng xuất
+        (function () {
+            var user = null;
+            try { user = JSON.parse(localStorage.getItem('currentUser') || 'null'); } catch (e) {}
+            if (user && user.username) {
+                var nameEl = document.getElementById('admin-name');
+                if (nameEl) nameEl.textContent = user.username;
+            }
+            var logoutBtn = document.getElementById('admin-logout');
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    localStorage.removeItem('currentUser');
+                    window.location.href = 'index.html';
+                });
+            }
+        })();
+    </script>
+</body>
+</html>

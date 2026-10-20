@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
+  <link rel="icon" type="image/jpeg" href="img/tcofi.jpg"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/contact - footer.css">
 </head>
@@ -47,7 +48,7 @@
     <div class="info-icon">🕐</div>
     <div>
       <strong>Giờ mở cửa</strong>
-      <p>8:00 - 22:00 mỗi ngày</p>
+      <p>7:00 - 22:30 mỗi ngày</p>
     </div>
   </div>
 </div>
@@ -55,31 +56,32 @@
 <div class="contact-form">
   <h3>Gửi tin nhắn</h3>
 
-  <form onsubmit="sendMessage(event)">
+  <form>
     <div class="form-group">
-      <label>Họ và tên</label>
-      <input type="text" placeholder="Nhập họ và tên" required>
+      <label for="feedback-name">Họ và tên</label>
+      <input id="feedback-name" name="name" type="text" placeholder="Nhập họ và tên" required>
     </div>
 
     <div class="form-group">
-      <label>Email</label>
-      <input type="email" placeholder="Nhập email" required>
+      <label for="feedback-email">Email</label>
+      <input id="feedback-email" name="email" type="email" placeholder="Nhập email" required>
     </div>
 
     <div class="form-group">
-      <label>Số điện thoại</label>
-      <input type="tel" placeholder="Nhập số điện thoại">
+      <label for="feedback-phone">Số điện thoại</label>
+      <input id="feedback-phone" name="phone" type="tel" placeholder="Nhập số điện thoại">
     </div>
 
     <div class="form-group">
-      <label>Nội dung</label>
-      <textarea rows="5" placeholder="Nhập nội dung cần liên hệ..." required></textarea>
+      <label for="feedback-message">Nội dung</label>
+      <textarea id="feedback-message" name="message" rows="5" placeholder="Nhập nội dung cần liên hệ..." required></textarea>
     </div>
 
     <button type="submit" class="contact-btn">
       Gửi tin nhắn →
     </button>
   </form>
+  <p class="contact-status" id="contact-status" role="status" aria-live="polite"></p>
 </div>
 
   </div>
@@ -92,5 +94,6 @@
 
     <div class="toast" id="toast"></div>
   </div>
+  <script src="js/contact-feedback.js"></script>
 </body>
 </html>
